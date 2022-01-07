@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: "Open Sans",Arial,sans-serif;
+}
+
+.header1 {
+  background-color: #02275d;
+  padding-left: 225px;
+  padding-right: 225px;
+  height: 40px;
+  color: white;
+}
+
+.header1 a{
+  color: white;
+  height: 40px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.listheader1 {
+  position: absolute;
+  margin: 0;
+  list-style-type: none;
+  padding-left: 0;
+  height: 40px;
+}
+
+.tombolmenuheader1 {
+  padding:10px 13px;
+  position: relative;
+  text-align: center;
+  height: 40px;
+  width: auto;
+  height: auto;
+  margin: 0;
+  display: inline-block;  
+}
+
+.logodjp {
+  margin-right: 250px;
+}
+
+.header2 {
+  padding-left: 200px;
+}
+
+.tombolmenuheader2 {
+  padding:10px 13px;
+  position: relative;
+  text-align: center;
+  height: 40px;
+  width: auto;
+  height: auto;
+  margin: 0;
+  display: inline-block; 
+  font-size: 14px;
+  font-weight: bolder;
+  letter-spacing: 0px;
+}

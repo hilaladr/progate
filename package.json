@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "chromedriver": "^96.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "forever": "^4.0.1",
+    "fs": "^0.0.1-security",
+    "node-schedule": "^2.1.0",
+    "nodemon": "^2.0.15",
+    "pm2": "^5.1.2",
+    "puppeteer": "^12.0.1",
+    "qrcode-terminal": "^0.12.0",
+    "sass": "^1.45.1",
+    "selenium-webdriver": "^4.1.0",
+    "socket.io": "^4.4.0",
+    "whatsapp-web": "^1.0.3",
+    "whatsapp-web.js": "^1.15.3"
+  },
+  "name": "whatsapp-api",
+  "version": "1.0.0",
+  "description": "Belajar whatsapp-api",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "whtasapp-api",
+    "node.js"
+  ],
+  "author": "Hilal",
+  "license": "MIT"
+}

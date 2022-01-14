@@ -1,75 +1,63 @@
-const { Client } = require('whatsapp-web.js');
-const qrcode = require('qrcode-terminal');
-const io = require('socket.io')
-const fs = require('fs');
-const schedule = require('node-schedule')
-const express = require('express');
-const app = express();
+const { data } = require('cheerio/lib/api/attributes');
+const { type } = require('express/lib/response');
+const res = require('express/lib/response');
+const puppeteer = require('puppeteer');
+function sleep(miliseconds) {
+    var currentTime = new Date().getTime();
+ 
+    while (currentTime + miliseconds >= new Date().getTime()) {
+    }
+};
 
-function run() {
-    const date = new Date();
-    var jam = date.getHours();
-    console.log(jam);
-}
 
-setInterval(run, 1000);
 
-app.get('/', (req,res) => {
-    res.sendFile('index.html', {root: __dirname});
-});
 
-const SESSION_FILE_PATH = './whatsapp-session.json';
-let sessionCfg;
-if (fs.existsSync(SESSION_FILE_PATH)) {
-    sessionCfg = require(SESSION_FILE_PATH);
-}
 
-const client = new Client({ puppeteer: { headless: true }, session: sessionCfg });
+(async function go() {
 
-client.on('qr', (qr) => {
-    // Generate and scan this code with your phone
-    console.log('QR RECEIVED', qr);
-    qrcode.generate(qr);
-});
-
-client.on('authenticated', (session) => {
-    console.log('AUTHENTICATED', session);
-    sessionCfg=session;
-    fs.writeFile(SESSION_FILE_PATH, JSON.stringify(session), function (err) {
-        if (err) {
-            console.error(err);
-        }
-    });
-});
-
-client.on('ready', () => {
-    console.log('Client is ready!');
-});
-
-client.on('message', async msg => {
-    console.log('MESSAGE RECEIVED', msg);
-
-    client.sendMessage(6281255661205, 'halo 123')
-
-    if (msg.body === '!ping reply') {
-        // Send a new message as a reply to the current one
-        msg.reply('pong');
-
-    } else if (msg.body === '!ping') {
-        // Send a new message to the same chat
-        client.sendMessage(msg.from, 'pong');
-
-    } else if (msg.body.startsWith('!sendto ')) {
-        // Direct send a new message to specific id
-        let number = msg.body.split(' ')[1];
-        let messageIndex = msg.body.indexOf(number) + number.length;
-        let message = msg.body.slice(messageIndex, msg.body.length);
-        number = number.includes('@c.us') ? number : `${number}@c.us`;
-        let chat = await msg.getChat();
-        chat.sendSeen();
-        client.sendMessage(number, message);
+    async function next() {
+        const elements = await page.$x('//*[@id="tabel-data_next"]/a');
+        await elements[0].click();
     };
-});
 
-client.initialize();
-app.listen(8000);
+    var time = new Date();
+    var tgl = time.getUTCDate();
+    console.log(tgl);
+    const browser = await puppeteer.launch({headless:false});
+    var page = await browser.newPage();
+    await page.goto('https://logbook.pajak.go.id/login');
+    await page.waitForSelector('input[name="nip"]');
+    await page.type('input[name="nip"]', '958631381');
+    await page.type('input[name="password"]', 'Grizztif12');
+    await page.click('button[type="submit"]');
+    await page.goto(`https://logbook.pajak.go.id/ReviuSelfAssessmentKesehatanBaru/previewMonitoringBm/202201${tgl}/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.IjQ0MDQyMjAwMDAi.IfJkTwx-ZIwttFF3NVcoihh14AwoaUqX-EuvK7fXoZQ`);
+    await sleep(3000);
+
+    /* cek jumlah page */
+    var f  = await page.$eval('.dataTables_info', el => el.innerText);
+    var pagestr = await f.split(" ")[5];
+    var pageint = Math.ceil((pagestr) / 10); /* hasil */
+
+    /* tarik data tabel */
+    let i = 0
+    var datastr = "";
+    while ( i < pageint) {
+        console.log(i)
+        var data1 = await page.$$eval('table tr td a', tds => tds.map((td) => { /* ambil data tabel */
+            return td.innerText;
+        }));
+        datastr = await datastr.concat(data1);
+        const elements = await page.$x('//*[@id="tabel-data_next"]/a');
+        await elements[0].click();
+        i++
+    };
+    var splitnama = await datastr.split(",");
+
+    
+
+    /* data.forEach(function (item, index){ /*print data
+        console.log(item);
+    }); */
+
+    /* coba pake ceil buat ambil jumlah entry */
+})();

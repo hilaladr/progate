@@ -9,16 +9,14 @@ function sleep(miliseconds) {
     }
 };
 
+async function next() {
+    const elements = await page.$x('//*[@id="tabel-data_next"]/a');
+    await elements[0].click();
+};
 
 
 
-
-(async function go() {
-
-    async function next() {
-        const elements = await page.$x('//*[@id="tabel-data_next"]/a');
-        await elements[0].click();
-    };
+async function go() {
 
     var time = new Date();
     var tgl = time.getUTCDate();
@@ -32,12 +30,10 @@ function sleep(miliseconds) {
     await page.click('button[type="submit"]');
     await page.goto(`https://logbook.pajak.go.id/ReviuSelfAssessmentKesehatanBaru/previewMonitoringBm/202201${tgl}/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.IjQ0MDQyMjAwMDAi.IfJkTwx-ZIwttFF3NVcoihh14AwoaUqX-EuvK7fXoZQ`);
     await sleep(3000);
-
     /* cek jumlah page */
     var f  = await page.$eval('.dataTables_info', el => el.innerText);
     var pagestr = await f.split(" ")[5];
     var pageint = Math.ceil((pagestr) / 10); /* hasil */
-
     /* tarik data tabel */
     let i = 0
     var datastr = "";
@@ -46,18 +42,14 @@ function sleep(miliseconds) {
         var data1 = await page.$$eval('table tr td a', tds => tds.map((td) => { /* ambil data tabel */
             return td.innerText;
         }));
-        datastr = await datastr.concat(data1);
+        datastr = await datastr.concat(data1,'\n');
         const elements = await page.$x('//*[@id="tabel-data_next"]/a');
         await elements[0].click();
         i++
     };
-    var splitnama = await datastr.split(",");
-
-    
-
-    /* data.forEach(function (item, index){ /*print data
-        console.log(item);
-    }); */
-
+    var myStr = datastr.replace(/,/g, '\n');
+    return myStr
     /* coba pake ceil buat ambil jumlah entry */
-})();
+};
+var myStr = go();
+console.log(myStr);

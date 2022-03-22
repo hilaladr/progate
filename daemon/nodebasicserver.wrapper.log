@@ -1,0 +1,18 @@
+2022-01-28 09:01:45 - Starting C:\Program Files\nodejs\node.exe  --harmony E:\JavaScript\node_modules\node-windows\lib\wrapper.js --file E:\JavaScript\app.js --scriptoptions= --log "nodeBasicServer wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-01-28 09:01:45 - Started 13384
+2022-01-28 09:03:48 - Starting C:\Program Files\nodejs\node.exe  --harmony E:\JavaScript\node_modules\node-windows\lib\wrapper.js --file E:\JavaScript\app.js --scriptoptions= --log "nodeBasicServer wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-01-28 09:03:48 - Started 14232
+2022-01-28 09:07:09 - Starting C:\Program Files\nodejs\node.exe  --harmony E:\JavaScript\node_modules\node-windows\lib\wrapper.js --file E:\JavaScript\app.js --scriptoptions= --log "nodeBasicServer wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-01-28 09:07:09 - Started 18724
+2022-02-04 15:03:56 - Starting C:\Program Files\nodejs\node.exe  --harmony E:\JavaScript\node_modules\node-windows\lib\wrapper.js --file E:\JavaScript\app.js --scriptoptions= --log "nodeBasicServer wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-02-04 15:03:58 - Started 7504
+2022-02-08 08:38:00 - Starting C:\Program Files\nodejs\node.exe  --harmony E:\JavaScript\node_modules\node-windows\lib\wrapper.js --file E:\JavaScript\app.js --scriptoptions= --log "nodeBasicServer wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-02-08 08:38:01 - Started 7760
+2022-02-10 18:24:19 - Starting C:\Program Files\nodejs\node.exe  --harmony E:\JavaScript\node_modules\node-windows\lib\wrapper.js --file E:\JavaScript\app.js --scriptoptions= --log "nodeBasicServer wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-02-10 18:24:20 - Started 7960
+2022-02-11 20:19:07 - Starting C:\Program Files\nodejs\node.exe  --harmony E:\JavaScript\node_modules\node-windows\lib\wrapper.js --file E:\JavaScript\app.js --scriptoptions= --log "nodeBasicServer wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-02-11 20:19:07 - Started 6884
+2022-02-25 09:08:50 - Starting C:\Program Files\nodejs\node.exe  --harmony E:\JavaScript\node_modules\node-windows\lib\wrapper.js --file E:\JavaScript\app.js --scriptoptions= --log "nodeBasicServer wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-02-25 09:08:52 - Started 7692
+2022-02-25 17:48:50 - Starting C:\Program Files\nodejs\node.exe  --harmony E:\JavaScript\node_modules\node-windows\lib\wrapper.js --file E:\JavaScript\app.js --scriptoptions= --log "nodeBasicServer wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-02-25 17:48:50 - Started 6956

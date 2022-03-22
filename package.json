@@ -1,11 +1,16 @@
 {
   "dependencies": {
+    "axios": "^0.24.0",
+    "cheerio": "^1.0.0-rc.10",
     "chromedriver": "^96.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "forever": "^4.0.1",
+    "forever": "^0.14.2",
     "fs": "^0.0.1-security",
+    "node-cron": "^3.0.0",
+    "node-prevent-sleep": "^0.0.4",
     "node-schedule": "^2.1.0",
+    "node-windows": "^0.1.4",
     "nodemon": "^2.0.15",
     "pm2": "^5.1.2",
     "puppeteer": "^12.0.1",
@@ -14,7 +19,7 @@
     "selenium-webdriver": "^4.1.0",
     "socket.io": "^4.4.0",
     "whatsapp-web": "^1.0.3",
-    "whatsapp-web.js": "^1.15.3"
+    "whatsapp-web.js": "^1.16.4"
   },
   "name": "whatsapp-api",
   "version": "1.0.0",
